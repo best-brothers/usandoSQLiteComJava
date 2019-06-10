@@ -1,8 +1,13 @@
 package usandoSQLiteComJava;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
-public class Banco {
+public class Banco1 {
 	static Statement statement = null;
 	static Connection connection = null;
 
@@ -56,11 +61,11 @@ public class Banco {
 		}
 	}
 
-	
 	public static void main(String[] args) {
 		conectar();
 		criarTabela();
 		inserirRegistro();
 		lendoRegistro();
 	}
+
 }
