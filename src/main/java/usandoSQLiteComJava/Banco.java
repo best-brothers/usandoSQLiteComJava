@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class Banco1 {
+public class Banco {
 	static Statement statement = null;
 	static Connection connection = null;
 
@@ -24,10 +24,10 @@ public class Banco1 {
 	}
 
 	// criando uma tabela
-	public static void criarTabela() {
+	public static void criarTabela(String sql) {
 		try {
 			// criando uma tabela
-			statement.execute("CREATE TABLE IF NOT EXISTS RC_TEST( ID INTEGER, NOME VARCHAR )");
+			statement.execute(sql);  //"CREATE TABLE IF NOT EXISTS RC_TEST( ID INTEGER, NOME VARCHAR )"
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
@@ -59,13 +59,6 @@ public class Banco1 {
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
-	}
-
-	public static void main(String[] args) {
-		conectar();
-		criarTabela();
-		inserirRegistro();
-		lendoRegistro();
 	}
 
 }
